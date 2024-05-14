@@ -40,7 +40,7 @@ export default function Search() {
   return (
     <div className="w-full mb-10">
       <div className="flex justify-center items-center mb-4">
-        <h2 className="text-primary  font-semibold  text-2xl">
+        <h2 className="text-primary  font-semibold tracking-tight  text-2xl">
           Explore cars you like
         </h2>
         <form className="flex">
