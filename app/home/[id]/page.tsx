@@ -15,8 +15,10 @@ import { addresses } from "@/lib/carArrays";
 import prisma from "@/lib/db";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import Link from "next/link";
+import { unstable_noStore as noStore } from "next/cache";
 
 async function getData(carId: string) {
+  noStore();
   const data = await prisma.car.findUnique({
     where: {
       id: carId,

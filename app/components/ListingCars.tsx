@@ -1,6 +1,7 @@
 import prisma from "@/lib/db";
 
 import CarCard from "./CarCard";
+import { unstable_noStore as noStore } from "next/cache";
 
 interface iAppProps {
   image: string;
@@ -11,6 +12,7 @@ interface iAppProps {
 }
 
 async function getData() {
+  noStore();
   const cars = await prisma.car.findMany({
     where: {
       addedType: true,
