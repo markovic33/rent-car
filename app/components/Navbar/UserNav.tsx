@@ -18,7 +18,6 @@ import Link from "next/link";
 export default async function UserNav() {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>

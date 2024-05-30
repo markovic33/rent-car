@@ -35,12 +35,15 @@ export default function Search() {
     setSelectedBrand(event.target.value);
   };
 
+  // Extract unique brands
+  const uniqueBrands = Array.from(new Set(cars.map((car) => car.brand)));
+
   const filteredCars = cars.filter((car) => car.brand === selectedBrand);
 
   return (
     <div className="w-full mb-10">
       <div className="flex justify-center items-center mb-4">
-        <h2 className="text-primary  font-semibold tracking-tight  text-2xl">
+        <h2 className="text-primary font-semibold tracking-tight text-2xl">
           Explore cars you like
         </h2>
         <form className="flex">
@@ -51,9 +54,9 @@ export default function Search() {
             className="ml-4 px-2 py-1 rounded-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
           >
             <option value="">Select a brand</option>
-            {cars.map((car) => (
-              <option key={car.id} value={car.brand}>
-                {car.brand}
+            {uniqueBrands.map((brand, index) => (
+              <option key={index} value={brand}>
+                {brand}
               </option>
             ))}
           </select>
