@@ -41,7 +41,7 @@ export default function CarCard({
       <Card className=" mb-10 relative group hover:shadow-xl hover:scale-95">
         <div className="flex flex-col items-center">
           <h2 className="text-muted-foreground font-medium">Location:</h2>
-          <h2>{location}</h2>
+          <h2>{location ? location : "No Chosen Location"}</h2>
           <div className="flex items-center gap-x-4 ">
             <div className="">
               <h2 className="font-medium text-muted-foreground">Start rent:</h2>
